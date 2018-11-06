@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Disney.com</title>
+	<link href="css/estilos.css" rel="stylesheet">
+	 <script  src="https://www.gstatic.com/charts/loader.js"></script>
+    <script >
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+	<div class="principal">
+		<div class="header">
+			<a class="logo" href="index.html">Disney</a>
+			<div class="lista">
+			<ul>
+				<li><a href="formulario.html">FROMULARIO</a></li>
+				<li><a href="https://sites.google.com/view/conceptosdiseopginasweb/p%C3%A1gina-principal">GOOGLE SITES</a></li>
+				<li><a href="sesion1/cinco.html">SESION 1</a></li>
+				<li><a href="#">TV</a></li>
+			</ul>
+			</div>
+		</div>
+		<div class="cabecera">
+			<div class="casca">
+				
+			</div>
+			<div class="links">
+				<a href="#">YA EN CINES</a><br><br>
+				<a class="subraya" href="#">VER MÁS |</a>
+				<a class="subraya" href="#">COMPAR TICKETES</a>
+
+			</div>
+		</div>
+
+		<div class="formulario">
+			<div class="cuadrocentral">
+			<form >
+				<h2>Viaje con nosotros</h2><br><br>
+				<label for="nombre">Nombre: </label>
+				<input name="nombre" id="nombre" type="text" placeholder="Escriba su nombre">
+				<label for="apellido">Apellido: </label>
+				<input type="text" id="apellido" name="apellido" placeholder="Escriba su apellido"><br><br><br>
+				<label for="correo">Correo Electrónico:</label>
+				<input type="email" id="correo" name="correo" placeholder="E-Mail"><br><br><br>
+				<input type="radio" name="cliente" checked="checked">Cliente nuevo<br>
+				<input type="radio" name="cliente">Cliente frecuente<br><br>
+				<label for="mensaje">Pregunta:</label><br><br>
+				<textarea name="mensaje" id="mensaje" rows="10" cols="80" placeholder="Escriba su mensaje aquí"></textarea><br><br>
+				<input type="submit" name="enviar" value="Enviar" class="buttons">
+				<input type="reset" name="borrar" value="Borrar" class="buttons">
+			</form>
+			<br><br><hr>
+			<h2>Nuestra ubicación</h2><br>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15718.887185877484!2d-84.15934109999999!3d9.957088950000001!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scr!4v1541482194335" width="800" height="450"  style="border:0" allowfullscreen></iframe>
+			<br><br><hr>
+			<h2>Estamos en todo el mundo</h2><br>
+			<div id="regions_div" style="width: 900px; height: 500px;"></div>
+			<br><br><hr>
+			<h2>Redes Sociales</h2><br>
+			<div class="redes">
+			<a href="https://www.youtube.com/watch?v=6fxczNLktMM"><img src="img/logo/youtube.png" alt="youtube"></a>
+			<a href="https://www.facebook.com/Programador-Web-536753823464116/"><img src="img/logo/facebook.png" alt="facebook"></a>
+			</div>
+			<div class="words">
+			<span class="youtube">Youtube</span><br><br><br>
+			<span>Facebook</span><br>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
